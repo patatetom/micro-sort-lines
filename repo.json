@@ -1,5 +1,5 @@
 [{
-  "Name": "sort-lines",
+  "Name": "lines",
   "Description": "Sort selected lines",
   "Tags": ["sort"],
   "Versions": [
