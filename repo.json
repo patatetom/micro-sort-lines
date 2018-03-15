@@ -1,0 +1,14 @@
+[{
+  "Name": "sort-lines",
+  "Description": "Sort selected lines",
+  "Tags": ["sort"],
+  "Versions": [
+    {
+      "Version": "0.1.1",
+      "Url": "https://github.com/patatetom/micro-sort-lines/archive/master.zip",
+      "Require": {
+        "micro": ">=1.0.3"
+      }
+    }
+  ]
+}]
