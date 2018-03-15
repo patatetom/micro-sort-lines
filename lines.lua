@@ -2,7 +2,7 @@ if GetOption("sort") == nil then
     AddOption("sort", true)
 end
 
-MakeCommand("sort", "lines.sort", 0)
+MakeCommand("sort", "sortlines.sort", 0)
 
 function sort(reverse)
     local view = CurView()
