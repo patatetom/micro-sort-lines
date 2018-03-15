@@ -2,8 +2,12 @@ if GetOption("sort") == nil then
     AddOption("sort", true)
 end
 
-MakeCommand("sort", "sortlines.sort", 0)
-BindKey("Alt-=", "command-edit: sort ")
+MakeCommand("sort", "sortlines.sort", MakeCompletion("sortlines.complete"))
+BindKey("Alt-=", "command-edit:sort ")
+
+function complete(input)
+    return {"-r"}
+end
 
 function sort(reverse)
     local view = CurView()
@@ -11,11 +15,11 @@ function sort(reverse)
     if cursor:HasSelection() then
         start, stop = cursor.CurSelection[1], cursor.CurSelection[2]
         if (start.X + stop.X) ~= 0 then
-            messenger:Error('wrong selection: must be whole lines with EOL')
+            messenger:Error("wrong selection: must be whole lines with EOL")
             return
         end
         if reverse ~= "" and reverse ~= "-r" then
-            messenger:Error('usage: sort [-r]')
+            messenger:Error("usage: sort [-r]")
         end
         selection = cursor:GetSelection()
         lines = {}
