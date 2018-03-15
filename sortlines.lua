@@ -1,3 +1,5 @@
+VERSION = "0.1.1"
+
 if GetOption("sort") == nil then
     AddOption("sort", true)
 end
