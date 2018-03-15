@@ -3,6 +3,7 @@ if GetOption("sort") == nil then
 end
 
 MakeCommand("sort", "sortlines.sort", 0)
+BindKey("Alt-=", "command-edit: sort ")
 
 function sort(reverse)
     local view = CurView()
@@ -13,7 +14,7 @@ function sort(reverse)
             messenger:Error('wrong selection: must be whole lines with EOL')
             return
         end
-        if reverse and reverse ~= "-r" then
+        if reverse ~= "" and reverse ~= "-r" then
             messenger:Error('usage: sort [-r]')
         end
         selection = cursor:GetSelection()
